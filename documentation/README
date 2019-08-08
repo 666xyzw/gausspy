@@ -5,7 +5,11 @@ and/or can analise the tar/tgz files from the calculations, by searching for err
 and samples the optimization energies to a separate file named 'enrgies.csv'. It does not have fancy graphical user interface
 so you can run it on a server too ;).
 
-How to use the script? 
+The script uses the xvibs software written by Bradly A. Smith and modified by Kun Attila Zsolt.
+
+The program comes with NO WARRANTY!
+
+How to use the program? 
 
 Well...:
 
@@ -28,52 +32,38 @@ On GNU/Linux system(s) #
 
 4. A Menu with 5 choices will appear:
 	1. Input file manipualtion 
-		-> this gets you to the part where you can generate inputfile from xyz files created with jmol, Hyperchem...etc.
+		-> this gets you to the part where you can generate inputfile from xyz/spinpu/gjf files created with Jmol, Hyperchem...etc.
+		
 		-> The first thing you have to give to the program is the path to the directory where the *.xyz files are located
-		-> Second request is to eneter the files route section, this means that if your moleculs contain transitional
-		metal atoms from the second row or higher then you only have to write 'Pseudo=read Opt' and whaterver you want 
-		to calculate. If the molecule has only first row transitional metal atoms then you shoul only write 
-		
-		
-	A)The 'input' or 'input generation' option will generate input files from spinput, xyz and/or gjf files
-	B)'analysis' or 'data analysis' will unpack the tar files to a 'tmp' folder and will search for errors, 
-	imaginary frequencies and samples the energies to a separate file.
-
-A):
-	A1.'Enter the full path to the directory where you have the files: '
-		-Here you have to enter the path to the folder where the files are located.
 		-ex.: ~/Programing/python/test/
 		**.The source files extension is handled automatically by gausspy.
-
-	A2.'Please enter the route section of the new input file(s): '
-		-In a gaussian input file the first line is the route section where you can specify 
+		
+		-> Second request is to enter the files route section, ex.: #P B3LYP/6-31G(d) Opt Freq=noraman
+		*In a gaussian input file the first line is the route section where you can specify 
 		the functionals/basis sets, optimization, frequency calculation...and so on...
-		-ex.: #P B3LYP/6-31G(d) Opt Freq scf=maxcycle=500
+		
+		-> Third request is to give the charge and spin multiplicity, ex.: 0 1 -> by the way, this is the default setting.
+		If you don`t eneter anything then this will be written in the file.
+		-> Fourth request is the extension of the new file(s), ex.: com -> this is also the default value.
+		
+		
+	2. Data analysis
+		-> 'Enter the full path to the directory where you have the tgz/tar files: '
+		-> Here you have to enter the path to the folder where you have the tar/tgz files.
+		-> ex.: ~/Programing/python/test/;
+		-> When you get promted to enter the route section, charge and spin, extension then basically you 
+		must do the same thing as above at the input file generation section :) . Theese request pop up only when the program has
+		found imaginary frequency(ies) and needs to generate a new set of coordinates.
 
-	A3.'Please enter the molecules charge and spin [ex.: 0 1 ]: '
-		-Next you have to enter your molecules charge (this is the first number), and 
-		it spin multiplicity (the second number) with space between them.
-		-ex.: 0 1
-
-	A4.'Please enter the genereated files extension [ex: com]: '
-		-The last step is to tell the script what extension will have the new files.
-		-ex.: com or gaussian (I gave theese two examples because theese are the most used extensions)
-
-B):
-	B1.'Enter the full path to the directory where you have the tgz/tar files: '
-		-Here you have to enter the path to the folder where you have the tar/tgz files.
-		-ex.: ~/Programing/python/test/;
-		-Press enter and the script will begin to work.
-		-If the program found imaginary frequency(ies) then you will be promted to enter the route section, 
-		charge/spin multiplicity and the extension of the new input files. (These step are A2, A3, A4)
+	3. Readme
+		-> prints out this file
 	
-	B2., B3., B4. are basically the same as above A2., A3., and A4.
-
-	B5.'Do you need the *.log and the old *.xyz files? [yes/no]: '
-		-This is the last step. If you type 'yes', then the program will leave behind the generated *.xyz, *.xyz-, *.ginp files alongside the input files.
-		-If you type 'no', then itt will delete all the *.log, *.xyz, *.xyz- and *.ginp files leaving just the input files in the imag folder.
-
-
+	4. LICENSE
+		-> prints out the license file
+	
+	5. Exit
+		-> Terminates the software.
+		
 #########################
 On Windows 10 system(s) #
 #########################
