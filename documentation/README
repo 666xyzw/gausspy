@@ -1,7 +1,7 @@
 ########################## written by xyz666 ##########################
 
 This program can generate gaussian input files from spinput, xyz, and gjf files,
-and/or can analise the tar/tgz files from the calculations, by searching for error termination, imaginary frequencies
+and/or can analyze the tar/tgz files from the calculations, by searching for error termination, imaginary frequencies
 and samples the optimization energies to a separate file named 'enrgies.csv'. It does not have fancy graphical user interface
 so you can run it on a server too ;).
 
