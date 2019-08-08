@@ -95,22 +95,21 @@ def data_analysis():
 #############################################################################################
 #############################################################################################
 def initialising():
-	print('Initializing system...')
-	time.sleep(2)
+	print("Welcome to gausspy.\n"
+		"This bundle of tools is meant to process files for the Gaussian quantum chemistry software.\n")
 
-	print('Loading modules')
-	sys.path.insert(0, 'src/')
-	time.sleep(2)
+def menu():	
+	print("Menu: ")
+	print("1. Input file manipulation\n"
+		"2. Data analysis\n"
+		"3. Readme\n"
+		"4. License\n"
+		"5. Exit\n")
 
-	print('System is now online')
-	time.sleep(2)
+def prompt():
+	global pr
 
-	
-
-def user_input():
-	global useri
-
-	useri=input('What would you like me to do? [input generation or data analysis]: ')
+	pr=input('$ ')
 	
 def system():
 	global users
@@ -120,29 +119,47 @@ def system():
 
 def mainfunc():
 
-	user_input()
+	prompt()
 
-	if useri=='input' or useri=='input generation':
+	if pr=='1':
 		inputg()
 
-	elif useri=='analysis' or useri=='data analysis':
+	elif pr=='2':
 		data_analysis() 
+
+	elif pr=='3':
+		with open('documentation/README', 'r') as rf:
+			file=rf.read()
+		print(file)
+
+	elif pr=='4':
+		with open('documentation/LICENSE', 'r') as rf:
+			l=rf.read()
+		print(l)
+
+	elif pr=='5':
+		print('Terminating software.')
+		sys.exit(0)
+
 	else:
-		print("These are the only two options that I have.\nPlease choose between these two!")
+		print("These are the only options that I have.")
+		menu()
 		mainfunc()
 
 #############################################################################################
 #############################################################################################
 if __name__=='__main__':
 
-	#initialising()
+	initialising()
+	menu()
 	
 	while True:
 		mainfunc()
 		system()
 
 		if users=='yes':
-			pass
+			menu()
+
 		else:
 			print('System going back offline')
 			time.sleep(2)
