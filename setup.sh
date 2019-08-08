@@ -2,20 +2,11 @@
 
 
 echo "Hello '$USER!' I will setup for you the gausspy tool."
-echo "$PWD" 
+#echo "$PWD" 
 
-echo Downloading software!
-wget -q https://sourceforge.net/projects/xvibs/files/xvibs/17/xvibs.jar
+cd Xvibs/
 
-if [ -e "xvibs.jar" ]
-then
-	echo "Download complete!"
-	chmod +7 "xvibs.jar"
-else
-	echo "Could not download the file!"
-fi
-
-touch xvibs | echo 'java -jar "$PWD/"xvibs.jar "$@"'
+touch xvibs && echo "java -jar "$PWD/"xvibs.jar \"\$@\" " >> xvibs
 chmod +11 xvibs
 
 if [ -d "/home/$USER/bin" ]
@@ -25,7 +16,10 @@ else
 	echo "Creating a 'bin' directory!"
 fi
 
-#echo "$PWD"
+#exiting the Xvibs folder and setting up the symbolic links
+cd ..
+
+
 echo "creating symbolic links for the program!"
 ln -s "$PWD/"gausspy.py /home/$USER/bin/gausspy
-ln -s "$PWD/"xvibs.jar /home/$USER/bin/xvibs
+ln -s "$PWD/Xvibs/"xvibs /home/$USER/bin/xvibs
