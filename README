@@ -1,0 +1,79 @@
+########################## written by xyz666 ##########################
+
+This program can generate gaussian input files from spinput, xyz, and gjf files,
+and/or can analyze the tar/tgz files from the calculations, by searching for error termination, imaginary frequencies
+and samples the optimization energies to a separate file named 'enrgies.csv'. It does not have fancy graphical user interface
+so you can run it on a server too ;).
+
+The script uses the xvibs software written by Bradly A. Smith and modified by Kun Attila-Zsolt.
+
+The program comes with NO WARRANTY!
+
+How to use the program? 
+
+Well...:
+
+########################
+On GNU/Linux system(s) #
+########################
+
+
+1. Open a terminal (usually Ctrl + Alt + T).
+
+2. Go in to the gausspy folder and run setup.sh (ex.: ./setup.sh)
+
+	->this script creates the symbolic links needed for the gausspy tool.
+	->if the setup prints a message like "mkdir: cannot create directory 'bin/': File exists." it means
+	that you already have a bin folder and it didn`t overwrite it;  
+	->if the setup prints a message like "ln: failed to create symbolic link '/home/username/bin/xvibs(gausspy)': File
+	exists" it means that the files are already present in the bin folder. If you want to update dose files first 
+	delete them and run the script angain.
+
+3. Type in gausspy (it will display some messages...don`t worry about them...)
+
+4. A Menu with 5 choices will appear:
+	1. Input file manipualtion 
+		-> this gets you to the part where you can generate inputfile from xyz/spinpu/gjf files created with Jmol, 
+		Hyperchem...etc.
+		
+		-> The first thing you have to give to the program is the path to the directory where the *.xyz files
+		are located
+		-ex.: ~/Programing/python/test/
+		**.The source files extension is handled automatically by gausspy.
+		
+		-> Second request is to enter the files route section, ex.: #P B3LYP/6-31G(d) Opt Freq=noraman
+		*In a gaussian input file the first line is the route section where you can specify 
+		the functionals/basis sets, optimization, frequency calculation...and so on...
+		
+		-> Third request is to give the charge and spin multiplicity, ex.: 0 1 -> by the way, this is the
+		default setting.
+		If you don`t eneter anything then this will be written in the file.
+		-> Fourth request is the extension of the new file(s), ex.: com -> this is also the default value.
+		
+		
+	2. Data analysis
+		-> 'Enter the full path to the directory where you have the tgz/tar files: '
+		-> Here you have to enter the path to the folder where you have the tar/tgz files.
+		-> ex.: ~/Programing/python/test/;
+		-> When you get promted to enter the route section, charge and spin, extension then basically you 
+		must do the same thing as above at the input file generation section :) . Theese request pop up only
+		when the program has
+		found imaginary frequency(ies) and needs to generate a new set of coordinates.
+
+	3. Readme
+		-> prints out this file
+	
+	4. LICENSE
+		-> prints out the license file
+	
+	5. Exit
+		-> Terminates the software.
+		
+#########################
+On Windows 10 system(s) #
+#########################
+
+ *The program is not fully compatible with Windows OS. BUT if you have Windows 10 then you should look up this 
+  link: https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/ where it is 
+  explained how to install Bash under Windows and from there on you can run this script within that linux environment 
+  and it will work!
