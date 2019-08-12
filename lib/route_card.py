@@ -32,21 +32,11 @@ def route_dict():
 			with open(f, 'r+') as rfe:
 
 				r=rfe.readlines()	
-				"""
-				--------------------
-				This is good
-				don`t fuck up
-				--------------------
-				"""
-
+				
 				for line in r:
 					if '#P' in line:
 						rd[fe[0]]=line
 		
-				
-
-
-	#print(rd)
 	return rd
 	
 
