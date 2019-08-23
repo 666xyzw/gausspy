@@ -29,6 +29,8 @@ fi
 #exiting the Xvibs folder and setting up the symbolic links
 cd ..
 
+#making gausspy executable
+chmod +x gausspy.py
 
 echo "creating symbolic links for the program!"
 ln -s "$PWD/"gausspy.py /home/$USER/bin/gausspy
