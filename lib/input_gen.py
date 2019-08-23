@@ -68,19 +68,7 @@ def xyz_input_gen(file, fn, route, chrg_spin, header_lines, ext):
 			wf.write('\n'+chrg_spin+'\n')
 			for l in lines[header_lines:]:
 				wf.write(str(l))
-			#the next line are hardcoded, they need to be removed afterwards!!!!!!!!!!!
-			"""
-			wf.write('\n') 
-			wf.write('C B H 0\n')
-			wf.write('6-31G(d)\n')
-			wf.write('****\n')
-			wf.write('Rh 0\n')
-			wf.write('SDD\n')
-			wf.write('****\n')
-			wf.write('\n')
-			wf.write('Rh 0\n')
-			wf.write('SDD\n')
-			"""
+		
 			for x in range(3):
 				wf.write('\n')
 							
@@ -148,17 +136,7 @@ def imag_xyz_gen(rd, chrg_spin, ext):
 						wf.write('\n'+chrg_spin+'\n')
 						for l in lines:
 							wf.write(str(l))
-						
-						wf.write('\n') 
-						wf.write('C B H 0\n')
-						wf.write('6-31G(d)\n')
-						wf.write('****\n')
-						wf.write('Ru 0\n')
-						wf.write('SDD\n')
-						wf.write('****\n')
-						wf.write('\n')
-						wf.write('Ru 0\n')
-						wf.write('SDD\n')
+					
 						for x in range(3):
 							wf.write('\n')
 						
