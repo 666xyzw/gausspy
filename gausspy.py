@@ -140,12 +140,12 @@ def mainfunc():
 		data_analysis() 
 
 	elif pr=='3':
-		with open('README', 'r') as rf:
+		with open('gausspy/README', 'r') as rf:
 			f=rf.read()
 		print(f)
 
 	elif pr=='4':
-		with open('LICENSE', 'r') as rf:
+		with open('gausspy/LICENSE', 'r') as rf:
 			f=rf.read()
 		print(f)
 
