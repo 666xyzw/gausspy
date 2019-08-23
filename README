@@ -5,7 +5,8 @@ and/or can analyze the tar/tgz files from the calculations, by searching for err
 and samples the optimization energies to a separate file named 'enrgies.csv'. It does not have fancy graphical user interface
 so you can run it on a server too ;).
 
-The script uses the xvibs software written by Bradly A. Smith and modified by Kun Attila-Zsolt.
+The script uses the Xvibs software written by Bradly A. Smith and modified by Kun Attila-Zsolt.
+The src/ folder contains the source files for the Xvibs software.
 
 The program comes with NO WARRANTY!
 
