@@ -21,7 +21,9 @@ On GNU/Linux system(s) #
 
 1. Open a terminal (usually Ctrl + Alt + T).
 
-2. Go in to the gausspy folder and run setup.sh (ex.: ./setup.sh)
+2. Go in to the gausspy folder and make the setup.py executable: chmod +x setup.py
+
+3. Run setup.sh (ex.: ./setup.sh)
 
 	->this script creates the symbolic links needed for the gausspy tool.
 	->if the setup prints a message like "mkdir: cannot create directory 'bin/': File exists." it means
@@ -30,9 +32,9 @@ On GNU/Linux system(s) #
 	exists" it means that the files are already present in the bin folder. If you want to update dose files first 
 	delete them and run the script angain.
 
-3. Type in gausspy (it will display some messages...don`t worry about them...)
+4. Type in gausspy (it will display some messages...don`t worry about them...)
 
-4. A Menu with 5 choices will appear:
+5. A Menu with 5 choices will appear:
 	1. Input file manipualtion 
 		-> This gets you to the part where you can generate inputfile from xyz/spinpu/gjf files created with Jmol, 
 		Hyperchem...etc.
