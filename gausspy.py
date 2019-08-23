@@ -141,13 +141,13 @@ def mainfunc():
 
 	elif pr=='3':
 		with open('README', 'r') as rf:
-			file=rf.read()
-		print(file)
+			f=rf.read()
+		print(f)
 
 	elif pr=='4':
 		with open('LICENSE', 'r') as rf:
-			l=rf.read()
-		print(l)
+			f=rf.read()
+		print(f)
 
 	elif pr=='5':
 		print('Terminating software.')
