@@ -18,7 +18,7 @@ echo "Hello '$USER!' I will setup for you the gausspy tool."
 cd Xvibs/
 
 touch xvibs && echo "java -jar "$PWD/"xvibs.jar \"\$@\" " >> xvibs
-chmod +11 xvibs
+chmod +x xvibs
 
 if [ -d "/home/$USER/bin" ]
 then
