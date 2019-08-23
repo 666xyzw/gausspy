@@ -34,7 +34,7 @@ On GNU/Linux system(s) #
 
 4. A Menu with 5 choices will appear:
 	1. Input file manipualtion 
-		-> this gets you to the part where you can generate inputfile from xyz/spinpu/gjf files created with Jmol, 
+		-> This gets you to the part where you can generate inputfile from xyz/spinpu/gjf files created with Jmol, 
 		Hyperchem...etc.
 		
 		-> The first thing you have to give to the program is the path to the directory where the *.xyz files
