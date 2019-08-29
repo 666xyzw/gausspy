@@ -23,11 +23,10 @@ def sampling():
 	the f_name list.
 	"""
 	print('Sampling the minimum energies!')
-	global test_list, scf_list, energy_list, f_name, energy_dict
+	global test_list, scf_list, f_name, energy_dict
 
 	test_list=[]
 	scf_list=[]
-	energy_list=[]
 	energy_dict={}
 	f_name=[]
 
@@ -39,10 +38,10 @@ def sampling():
 			if ext=='csv' or ext=='com':
 				pass
 			elif 'ERROR' in name:
-				pass
-			else:
-				f_name.append(name)
 				
+				energy_dict[name]='ERROR'
+			else:
+								
 				with open(f, 'r+') as rf:
 					lines=rf.readlines()
 						
@@ -51,30 +50,15 @@ def sampling():
 							test_list.append(SCF)
 			
 					scf_list.append(test_list[-1])
+
+					for y in scf_list:
+						energy=y.split(' ')
+						energy_dict[name]=energy[7]
 		except ValueError:
 			pass
-	#u=0	
-	#for x in scf_list: #for debugging just uncomment the lines!
-	#	u+=1
-	#	print('scf_list: ', u, x)
 
-	for y in scf_list:
-		energy=y.split(' ')
-		energy_list.append(energy[7])
-	
-	#also for debugging	
-	#for x in energy_list:
-	#	print('energy_list: ', x)
-	
-	#for debugging too!
-	#for z in f_name:
-	#	print('names: ', z)
-
-	energy_dict=dict(zip(f_name, energy_list))
+	#print(energy_dict)
 	return energy_dict
-	#for debugging!
-	#for h in energy_dict:
-	#	print('energy_dict: ', h, energy_dict[h])
 
 
 def csv_writer(energy_dict):
