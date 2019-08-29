@@ -12,7 +12,7 @@ but WITHOUT ANY WARRANTY.
 
 
 import os
-from tqdm import tqdm
+
 
 def spinput_gen(file, fn, route, chrg_spin, header_lines, ext):
 	try:
