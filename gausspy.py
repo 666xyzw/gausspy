@@ -13,6 +13,7 @@ but WITHOUT ANY WARRANTY.
 """
 
 import os, sys, time
+from tqdm import tqdm
 
 sys.path.insert(0, 'lib/')
 
