@@ -25,6 +25,7 @@ then
 	echo "bin directory already exists."
 else
 	echo "Creating a 'bin' directory!"
+	mkdir /home/$USER/bin
 fi
 
 #exiting the Xvibs folder and setting up the symbolic links
