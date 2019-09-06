@@ -24,19 +24,9 @@ def cleaner(answer):
 		for f in os.listdir():
 			fi=f.split('.')
 
-			if 'xyz' in fi[-1] or 'log' in fi[-1] or 'xyz-' in fi[-1] or 'ginp' in fi[-1]:
+			if 'xyz' in fi[-1] or 'xyz-' in fi[-1] or 'ginp' in fi[-1]:
 				os.system('rm '+f)
 
 
-		os.chdir('..')
-
-		try:
-			for f in os.listdir():
-				fi=f.split('.')
-
-				if 'com' in fi:
-					os.system('rm '+f)
-		except ValueError:
-			pass
 	else:
 		pass
