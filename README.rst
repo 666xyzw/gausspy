@@ -14,9 +14,15 @@ How to use the program?
 
 Well...:
 
+<<<<<<< HEAD:README.rst
 
 On GNU/Linux system(s) 
 ======================
+=======
+#######################
+On GNU/Linux system(s)#
+#######################
+>>>>>>> 19a19eaa192330c811a87a502ac0561aac25f51c:README
 
 
 1. Open a terminal (usually Ctrl + Alt + T).
