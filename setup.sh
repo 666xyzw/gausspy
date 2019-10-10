@@ -32,8 +32,8 @@ fi
 cd ..
 
 #making gausspy executable
-chmod +x gausspy.py
+chmod +x lib/gausspy.py
 
 echo "creating symbolic links for the program!"
-ln -s "$PWD/"gausspy.py /home/$USER/bin/gausspy
+ln -s "$PWD/lib/"gausspy.py /home/$USER/bin/gausspy
 ln -s "$PWD/Xvibs/"xvibs /home/$USER/bin/xvibs

@@ -15,6 +15,7 @@ import os, sys, time
 
 from inputfile import inputfiles
 from datafile import data_analysis
+from VersionControl import Version
 
 #############################################################################################
 #############################################################################################
@@ -24,19 +25,20 @@ It imports the data_analysis and inputg functions from the lib/ folder.
 """
 
 def initialising():
-	print("Welcome to gausspy; version 1.1.\n"
-		"This bundle of tools is meant to process files for the Gaussian quantum chemistry software.\n")
+	# v = Version()
+	print("Welcome to gausspy; version ", Version().version)
+	print("This bundle of tools is meant to process files for the Gaussian quantum chemistry software.\n")
 
 def menu():	
 	
 	print(
-		"Gausspy menu:\n"
+		"Menu:\n"
 		"\n"
-		"\t1. Input file manipulation\n"
-		"\t2. Data analysis\n"
-		"\t3. Readme\n"
-		"\t4. License\n"
-		"\t5. Exit\n")
+		"1. Input file manipulation\n"
+		"2. Data analysis\n"
+		"3. Readme\n"
+		"4. License\n"
+		"5. Exit\n")
 
 def prompt():
 	global pr

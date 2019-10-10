@@ -14,25 +14,26 @@ but WITHOUT ANY WARRANTY.
 import re
 
 class Version:
+	"""
+	Open the __init__.py file to take out the version number in it.
+	That number is passed down to gausspy.py an will be written to the screen every time
+	the program starts.
+	"""
 
-	version={}
+	def __init__(self):
 
-	def __init__(self, file):
-
-		self.file = file
-
-		with open(self.file, 'r') as rf:
+		with open("__init__.py", 'r') as rf:
 
 			line = rf.readline()
 		
 			for nr in re.finditer("[0-9.]{1,3}", line):
 				
-				self.version["gausspy"] = nr.group(0)
+				self.version = float(nr.group(0))
 
 
 if __name__ == '__main__':
 	
 
-	v = Version("__init__.py")
+	v = Version()
 
 	print(v.version)
