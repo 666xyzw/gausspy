@@ -14,22 +14,19 @@ How to use the program?
 
 Well...:
 
-<<<<<<< HEAD:README.rst
-
-On GNU/Linux system(s) 
-======================
-=======
 #######################
 On GNU/Linux system(s)#
 #######################
->>>>>>> 19a19eaa192330c811a87a502ac0561aac25f51c:README
+
 
 
 1. Open a terminal (usually Ctrl + Alt + T).
 
-2. Go in to the gausspy folder and make the setup.py executable: chmod +x setup.py
+2. Download gausspy either as a zip file and then unpack it, or enter in the terminal the following: git clone git_address (this can be copied from abode the download button ;)
 
-3. Run setup.sh (ex.: ./setup.sh)
+3. Go in to the gausspy folder and make the setup.py executable: chmod +x setup.py
+
+4. Run setup.sh (ex.: ./setup.sh)
 
 	->this script creates the symbolic links needed for the gausspy tool.
 	->if the setup prints a message like "mkdir: cannot create directory 'bin/': File exists." it means
@@ -38,9 +35,9 @@ On GNU/Linux system(s)#
 	exists" it means that the files are already present in the bin folder. If you want to update those files first 
 	delete them and run the script again.
 
-4. Type in gausspy (it will display some messages...don`t worry about them...)
+5. Type in gausspy (it will display some messages...don`t worry about them...)
 
-5. A Menu with 5 choices will appear:
+6. A Menu with 5 choices will appear:
 	1. Input file manipualtion 
 		-> This gets you to the part where you can generate inputfile from xyz/spinpu/gjf files created with Jmol, 
 		Spartan, GaussView, Hyperchem...etc.
