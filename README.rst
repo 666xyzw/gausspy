@@ -14,9 +14,9 @@ How to use the program?
 
 Well...:
 
-########################
-On GNU/Linux system(s) #
-########################
+
+On GNU/Linux system(s) 
+======================
 
 
 1. Open a terminal (usually Ctrl + Alt + T).
@@ -37,21 +37,31 @@ On GNU/Linux system(s) #
 5. A Menu with 5 choices will appear:
 	1. Input file manipualtion 
 		-> This gets you to the part where you can generate inputfile from xyz/spinpu/gjf files created with Jmol, 
-		Hyperchem...etc.
+		Spartan, GaussView, Hyperchem...etc.
 		
-		-> The first thing you have to give to the program is the path to the directory where the *.xyz files
+		-> The first thing you have to give to the program is the path to the directory where the *.xyz/spinput/gjf files
 		are located
 		-ex.: ~/Programing/python/test/
-		**.The source files extension is handled automatically by gausspy.
+		    **>The source files extension is handled automatically by gausspy.
 		
-		-> Second request is to enter the files route section, ex.: #P B3LYP/6-31G(d) Opt Freq=noraman
-		*In a gaussian input file the first line is the route section where you can specify 
-		the functionals/basis sets, optimization, frequency calculation...and so on...
+		-> Second request is to enter the functional that will be used in the  calculations, ex.:B3LYP
+    		*In a gaussian input file the first line is the route section where you can specify 
+	    	the functionals/basis sets, optimization, frequency calculation...and so on...
 		
-		-> Third request is to give the charge and spin multiplicity, ex.: 0 1 -> by the way, this is the
-		default setting.
-		If you don`t eneter anything then this will be written in the file.
-		-> Fourth request is the extension of the new file(s), ex.: com -> this is also the default value.
+		-> Third request is to give the first basis set for the calculation, ex.: 6-31G(d)
+            * I named it first basis set because the program takes two basis sets.
+            This will be used in every calculation!
+
+		-> [OPTIONAL] Fourth request is to give the second basis set, ex.: SDD
+            * Now this part is optional as the fifth request! You ONLY have to enter
+            a second basis set if the molecule contains second row transition metal(s)!
+
+        -> []OPTIONAL] Fifth request is to specifiy the second row transition metal so itt will be added
+        into the input file, ex.: Rh
+
+        -> Sixth request is to specify the molecules charge and multiplicity, ex.: 0 1
+
+        -> Seventh request is to give the new file(s) extension, ex.: com
 		
 		
 	2. Data analysis
@@ -79,3 +89,14 @@ On Windows 10 system(s) #
   link: https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/ where it is 
   explained how to install Bash under Windows and from there on you can run this script within that linux environment 
   and it will work!
+ 
+###############
+For Developers#
+###############
+    For those who want to contribute to this little and humble project :)
+        -> first of all: feel free to modify/add to the project :)
+        -> every file that does something (functions, classes) goes into lib/ folder
+        -> file names that contain only functions are written in lowerCamelCase style, and are named after the main function, ex.: xawker.py
+        -> file names that contain classes are written in UpperCamelCase (like the class it self) style, ex.: ImagCatcher.py
+        -> if you write something in another language that is compiled and not interpreted (C, C++, Java...etc.) then the source
+        code goes in to the src/ folder. This is because of the GPL-2.0 license.

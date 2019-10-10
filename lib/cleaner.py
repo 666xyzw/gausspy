@@ -12,11 +12,11 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY.
 """
 
-
 def cleaner(answer):
 	"""
-	This function needs a parameter. If the parameter is no, then, in the imag folder, deletes everything (*.logs, *.xyz, *.xyz- and ginp) except the new input files.
-	If the parameter is yes then it will exit, doing nothing.
+	This function take the answer given by the user. If the parameter is no, then, 
+	in the imag folder, deletes everything (*.logs, *.xyz, *.xyz- and ginp) except 
+	the new input files. If the parameter is yes then it will exit, doing nothing.
 	"""
 	if answer=='no':
 		print('Cleaning up!')
@@ -25,8 +25,7 @@ def cleaner(answer):
 			fi=f.split('.')
 
 			if 'xyz' in fi[-1] or 'xyz-' in fi[-1] or 'ginp' in fi[-1]:
-				os.system('rm '+f)
-
+				os.system('rm ' + f)
 
 	else:
 		pass

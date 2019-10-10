@@ -48,3 +48,12 @@ def unrar(directory):
 			pass
 	
 	os.chdir('tmp/')
+
+if __name__ == '__main__':
+	
+	path = input("Path: ")
+
+	d = os.chdir(os.path.expanduser(path))
+
+	tmp_check(d)
+	unrar(d)
