@@ -163,8 +163,3 @@ class GamessReader implements MoleculeReader {
   }
 }
 
-
-/* Location:              /home/xyz666/gausspy/Xvibs/xvibs.jar!/GamessReader.class
- * Java compiler version: 2 (46.0)
- * JD-Core Version:       1.0.7
- */

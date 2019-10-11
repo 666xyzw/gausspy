@@ -31,9 +31,3 @@ class Tuple3d {
     this.z *= paramDouble;
   }
 }
-
-
-/* Location:              /home/xyz666/gausspy/Xvibs/xvibs.jar!/Tuple3d.class
- * Java compiler version: 2 (46.0)
- * JD-Core Version:       1.0.7
- */

@@ -155,9 +155,3 @@ class MopacReader implements MoleculeReader {
     return str;
   }
 }
-
-
-/* Location:              /home/xyz666/gausspy/Xvibs/xvibs.jar!/MopacReader.class
- * Java compiler version: 2 (46.0)
- * JD-Core Version:       1.0.7
- */

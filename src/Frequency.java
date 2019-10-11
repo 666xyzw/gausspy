@@ -17,8 +17,3 @@ class Frequency {
   void removeVectors() { this.vectors.removeAllElements(); }
 }
 
-
-/* Location:              /home/xyz666/gausspy/Xvibs/xvibs.jar!/Frequency.class
- * Java compiler version: 2 (46.0)
- * JD-Core Version:       1.0.7
- */

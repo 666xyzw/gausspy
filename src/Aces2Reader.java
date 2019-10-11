@@ -143,8 +143,3 @@ class Aces2Reader implements MoleculeReader {
   }
 }
 
-
-/* Location:              /home/xyz666/gausspy/Xvibs/xvibs.jar!/Aces2Reader.class
- * Java compiler version: 2 (46.0)
- * JD-Core Version:       1.0.7
- */

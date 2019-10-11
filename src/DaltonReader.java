@@ -149,9 +149,3 @@ class DaltonReader implements MoleculeReader {
     } 
   }
 }
-
-
-/* Location:              /home/xyz666/gausspy/Xvibs/xvibs.jar!/DaltonReader.class
- * Java compiler version: 2 (46.0)
- * JD-Core Version:       1.0.7
- */

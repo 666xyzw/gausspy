@@ -139,9 +139,3 @@ class Gaussian98Reader implements MoleculeReader {
     } 
   }
 }
-
-
-/* Location:              /home/xyz666/gausspy/Xvibs/xvibs.jar!/Gaussian98Reader.class
- * Java compiler version: 2 (46.0)
- * JD-Core Version:       1.0.7
- */

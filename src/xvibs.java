@@ -680,9 +680,3 @@ public class xvibs {
     paramPrintStream.println("of promoting the sharing and reuse of software generally.");
   }
 }
-
-
-/* Location:              /home/xyz666/gausspy/Xvibs/xvibs.jar!/xvibs.class
- * Java compiler version: 2 (46.0)
- * JD-Core Version:       1.0.7
- */
