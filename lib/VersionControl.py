@@ -13,7 +13,7 @@ but WITHOUT ANY WARRANTY.
 """
 import re, os
 
-class Version:
+class VersionControl:
 	
 	def __init__(self):
 		os.chdir(os.path.expanduser("~/gausspy/lib/"))

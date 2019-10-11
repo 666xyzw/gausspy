@@ -53,19 +53,20 @@ def xawker(imag_dict):
 			os.system("awk '{print $1, $2, $3, $4}' "+ f +" "+"> "+f+"-")
 
 	print('Generating ginp file(s)')
-
+	
 	for f in os.listdir():
-		fi=f.split('.')
 		
-		if fi[-1]=='xyz-':
+		fi = f.split('.')
+
+		if fi[-1] == "xyz-":
+		
 			with open(f, 'r+') as rf:
+		
 				text=rf.readlines()
 
 				h1=int(text[0]) #first line in the xyz- file -> gives the total number of atoms 
 				h2=text[1].split(' ') #second line in the xyz- file, is split into a list
-				x=h2[-1].split('.') #the freq number is take out of the second line
-				i=x[0] #'i' is asociated with the freq number
-									
+													
 				n1=0 #line number
 				n2=0 #numbering the lines which contain the 'Energy' word
 
@@ -77,6 +78,9 @@ def xawker(imag_dict):
 							begin=n1
 							end=n1+h1
 							
-							with open(fi[0]+'_r' + str(i)+ '.ginp', 'w') as wf:
+							with open(fi[0]+'_r-' + str(fi[1])+ '.ginp', 'w') as wf:
+								#fi[1] is the imag files number; it`s more practical to number the files
+								#like this than to every time search and round up the actual freq(s)
+								#to prevent overwriting in case if there are two very close freqs
 								for l in text[begin:end]:
 									wf.write(str(l))
