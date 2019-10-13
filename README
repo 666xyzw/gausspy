@@ -37,7 +37,7 @@ On GNU/Linux system(s)#
 
 5. Type in gausspy (it will display some messages...don`t worry about them...)
 
-6. A Menu with 5 choices will appear:
+6. A Menu with 3 choices will appear:
 	1. Input file manipualtion 
 		-> This gets you to the part where you can generate inputfile from xyz/spinpu/gjf files created with Jmol, 
 		Spartan, GaussView, Hyperchem...etc.
@@ -75,13 +75,7 @@ On GNU/Linux system(s)#
 		must do the same thing as above at the input file generation section :) . Theese request pop up only
 		when the program has found imaginary frequency(ies) and needs to generate a new set of coordinates.
 
-	3. Readme
-		-> prints out this file
-	
-	4. LICENSE
-		-> prints out the license file
-	
-	5. Exit
+	3. Exit
 		-> Terminates the software.
 		
 #########################
