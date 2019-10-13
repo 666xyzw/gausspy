@@ -37,9 +37,7 @@ def menu():
 		"\n"
 		"1. Input file manipulation\n"
 		"2. Data analysis\n"
-		"3. Readme\n"
-		"4. License\n"
-		"5. Exit\n")
+		"3. Exit\n")
 
 def prompt():
 	global pr
@@ -63,16 +61,6 @@ def mainfunc():
 		data_analysis() 
 
 	elif pr=='3':
-		with open('README', 'r') as rf:
-			f=rf.read()
-		print(f)
-
-	elif pr=='4':
-		with open('LICENSE', 'r') as rf:
-			f=rf.read()
-		print(f)
-
-	elif pr=='5':
 		print("Thank you for using gausspy.\n"
 				"Have a nice day!\n")
 		sys.exit(0)
