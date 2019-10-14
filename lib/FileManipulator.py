@@ -111,8 +111,8 @@ class FileManipulator:
 				wf.write("****\n")
 				wf.write(hv + " 0\n")
 				wf.write(sbasis +"\n")
-				wf.write("\n")
 				wf.write("****\n")
+				wf.write("\n")
 				wf.write(hv + " 0\n")
 				wf.write(sbasis + "\n")
 
