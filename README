@@ -59,7 +59,7 @@ On GNU/Linux system(s)#
             * Now this part is optional as the fifth request! You ONLY have to enter
             a second basis set if the molecule contains second row transition metal(s)!
 
-        -> []OPTIONAL] Fifth request is to specifiy the second row transition metal so itt will be added
+        -> [OPTIONAL] Fifth request is to specifiy the second row transition metal so itt will be added
         into the input file, ex.: Rh
 
         -> Sixth request is to specify the molecules charge and multiplicity, ex.: 0 1
