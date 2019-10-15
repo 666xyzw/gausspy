@@ -97,3 +97,4 @@ For Developers#
         -> file names that contain classes are written in UpperCamelCase (like the class it self) style, ex.: ImagCatcher.py
         -> if you write something in another language that is compiled and not interpreted (C, C++, Java...etc.) then the source
         code goes in to the src/ folder. This is because of the GPL-2.0 license.
+        -> the tests/ folder holds some files that can be analyzed and some files to generate input files; both type of files are held in different folders, namely analysis/ and input/.
