@@ -34,7 +34,7 @@ def csvwriter(energy_dict):
 
 			with open ('energies.csv', 'w') as wf:
 				wf.write('Name'+','+'Py-Energy'+'\n')
-				for element in energy_dict:
+				for element in sorted(energy_dict.keys()):
 					wf.write(element+','+energy_dict[element]+'\n')
 					
 		except ValueError:
