@@ -21,14 +21,14 @@ class EnergyEx:
 	If the log file has errors than instead of the energy it gives as value Error.
 	"""
 
-	def __init__(self, test_list=[], scf_list=[], energy_dict={}):
+	def __init__(self):
 		"""
 		Initializes the two empty lists and one empty dictionary.
 		"""
 
-		self.test_list = test_list
-		self.scf_list = scf_list
-		self.energy_dict = energy_dict
+		self.test_list = []
+		self.scf_list = []
+		self.energy_dict = {}
 
 		print("Sampling Energies!")
 
@@ -39,12 +39,7 @@ class EnergyEx:
 
 			name, ext = file.split('.')
 
-			if ext == "log" and "_ERROR" in name and "_imag" not in name:
-				self.energy_dict[name] = "Error"
-
-				
-
-			elif ext == "log" or "_imag" in name:
+			if ext == "log":
 
 				with open(file, 'r+') as rf:
 					lines=rf.readlines()
@@ -59,13 +54,14 @@ class EnergyEx:
 						energy=y.split(' ')
 						self.energy_dict[name]=energy[7]
 
-			else:
-				pass
 
-
+			if ext == "log" and "_ERROR" in name:
+				self.energy_dict[name] = "Error"
+				
 		except ValueError:
 			pass
 
+		
 		return self.energy_dict
 
 
@@ -78,6 +74,6 @@ if __name__ == '__main__':
 	for f in os.listdir():
 		e.sampler(f)
 
-	for key in e.energy_dict:
+	for key in sorted(e.energy_dict.keys()):
 		print(key, e.energy_dict[key])
 
