@@ -98,3 +98,6 @@ For Developers#
         -> if you write something in another language that is compiled and not interpreted (C, C++, Java...etc.) then the source
         code goes in to the src/ folder. This is because of the GPL-2.0 license.
         -> the tests/ folder holds some files that can be analyzed and some files to generate input files; both type of files are held in different folders, namely tests/analysis/ and tests/input/.
+        -> the tests/input/ folder also holds 2 sets of files:
+        		a) inputs_with_first_row_transitional_metals/ -> stores files that don`t contain second row transition metals
+        		b) inputs_with_second_row_transitional_metals/ -> stores files that contain second row transition metals
