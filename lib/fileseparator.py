@@ -28,7 +28,7 @@ def fileseparator(file):
         
         name, ext = file.split('.') #splitting the file into name and extension
 
-        if "_ERROR" in name and "_imag" in name:
+        if "_ERROR" in name and "_imag" in name: #if the file contains both imaginary freqs and also has an erro termination then it is moved to the imaginary folder and processed
             #print("Moving {} to error/".format(file))
             os.system("mv " + file + " imag/")
 

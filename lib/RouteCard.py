@@ -19,6 +19,12 @@ from ImagCatcher import ImagCatcher
 
 class RouteCard:
 
+	"""
+	The RouteCard class extracts the route card of the old input files and passes it
+	to ImagInput and by this the user doesn`t have to retype every time the
+	route card for every new input file.
+	"""
+
 	def __init__(self, imag_dict=None, rd={}):
 
 		self.rd = rd #route_card dictionary -> will hold the file name (key) and the routecard (value)
@@ -27,6 +33,10 @@ class RouteCard:
 
 
 	def route_card(self, file):
+		"""
+		Opens the com file and takes out the first line and if the input file contains
+		a secondary basis set then it takes out that too, and saves them into a dictionary.
+		"""
 		
 		try:
 			fn, fe = file.split('.')
@@ -47,14 +57,14 @@ class RouteCard:
 							ln += 1
 							
 							if "#P " in line:
-								rl.append(line)
+								rl.append(line) #this is the first line of the file
 
-							if "****" in line:
+							if "****" in line: #searches for the "****" line
 								sn += 1
 								
-								if sn == 1:
-									ln -= 3
-									rl.append(r[ln:])
+								if sn == 1: #if that line is found then
+									ln -= 3 #from the total line number (which was counted until then) is substracted 3
+									rl.append(r[ln:]) #and from that line number everything till EOF is stored in self.rd dictionary
 
 							self.rd[fn]=rl
 		

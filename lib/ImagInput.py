@@ -18,10 +18,14 @@ from RouteCard import RouteCard
 
 class ImagInput:
 
-	def __init__(self, chrg="0 1", ex="com"):
+	"""
+	The ImagInput class generates input files from those calculations that contain imaginary frequencies!
+	"""
 
-		self.chrg = chrg
-		self.ex = ex
+	def __init__(self):
+
+		self.chrg = "0 1"
+		self.ex = "com"
 		
 		print('Generating the new input files!')
 

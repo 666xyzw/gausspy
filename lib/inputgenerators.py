@@ -15,7 +15,7 @@ but WITHOUT ANY WARRANTY.
 import os
 from FileManipulator import FileManipulator
 
-def xyz_input(file, functional, fbasis, sbasis, hva, route, chrg_spin, ext):
+def xyz_input(file, functional, fbasis, sbasis, route, chrg_spin, ext):
 	
 	header = 2
 
@@ -23,12 +23,12 @@ def xyz_input(file, functional, fbasis, sbasis, hva, route, chrg_spin, ext):
 
 		fm = FileManipulator(file)
 
-		fm.atomic_list(2, None)
+		fm.atomic_list(header, None)
 
 		#checks if the user provided a second basis set. If not then fm.write1 will be executed
 		if sbasis != '':
 			
-			fm.write2(fm.atom_list, functional, fbasis, sbasis, hva, route, chrg_spin, ext)
+			fm.write2(fm.atom_list, functional, fbasis, sbasis, route, chrg_spin, ext)
 		
 		else:
 		
@@ -39,7 +39,7 @@ def xyz_input(file, functional, fbasis, sbasis, hva, route, chrg_spin, ext):
 
 
 
-def spinput_gen(file, functional, fbasis, sbasis, hva, route, chrg_spin, ext):
+def spinput_gen(file, functional, fbasis, sbasis, route, chrg_spin, ext):
 	
 	header = 3
 
@@ -65,7 +65,7 @@ def spinput_gen(file, functional, fbasis, sbasis, hva, route, chrg_spin, ext):
 
 		if sbasis != '':
 
-			fm.write2(fm.atom_list, functional, fbasis, sbasis, hva, route, chrg_spin, ext)
+			fm.write2(fm.atom_list, functional, fbasis, sbasis, route, chrg_spin, ext)
 
 		else:
 
@@ -74,7 +74,7 @@ def spinput_gen(file, functional, fbasis, sbasis, hva, route, chrg_spin, ext):
 	except ValueError:
 		pass
 
-def gjf_input(file, functional, fbasis, sbasis, hva, route, chrg_spin, ext):
+def gjf_input(file, functional, fbasis, sbasis, route, chrg_spin, ext):
 
 	header = 6
 
@@ -92,7 +92,7 @@ def gjf_input(file, functional, fbasis, sbasis, hva, route, chrg_spin, ext):
 
 		if sbasis != '':
 			
-			fm.write2(fm.atom_list, functional, fbasis, sbasis, hva, route, chrg_spin, ext)
+			fm.write2(fm.atom_list, functional, fbasis, sbasis, route, chrg_spin, ext)
 
 		else:
 
@@ -111,7 +111,6 @@ if __name__ == '__main__':
 	func = input("Functional: ")
 	fbas = input("First basis: ")
 	sbas= input("Second basis: ")
-	hv = input("Heavy atoms: ")
 	route = input("Provide the rest of the route card: ")
 	chrg_spin = input('Enter the molecules new charge and spin value: ')
 	ext = input('Enter the generated files extension: ')
@@ -121,15 +120,15 @@ if __name__ == '__main__':
 			fn, fe = file.split('.')
 
 			if "xyz" in fe:
-				xyz_input(file, func, fbas, sbas, hv, route, chrg_spin, ext)
+				xyz_input(file, func, fbas, sbas, route, chrg_spin, ext)
 
 			elif "spinput" in fe:
 
-				spinput_gen(file, func, fbas, sbas, hv, route, chrg_spin, ext)
+				spinput_gen(file, func, fbas, sbas, route, chrg_spin, ext)
 
 			elif "gjf" in fe:
 
-				gjf_input(file, func, fbas, sbas, hv, route, chrg_spin, ext)
+				gjf_input(file, func, fbas, sbas, route, chrg_spin, ext)
 
 			else:
 

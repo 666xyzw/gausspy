@@ -78,7 +78,7 @@ def data_analysis():
 	energy=EnergyEx()
 
 	for file in os.listdir():
-
+		print(file)
 		energy.sampler(file)
 
 
@@ -91,15 +91,19 @@ def data_analysis():
 	##################################################################################################
 
 	####### Genertaing the new input files from the *.log files containing imaginary freqs #######
-	xawker(imag.imag_dict)
+	if imag.imag_dict != {}:
 
-	im = ImagInput()
-	
-	chrg_spin=input('Please enter the molecules new charge and spin value [ex.: 0 1 ]: ')
-	ext=input('Please enter the generated files extension [ex: com]: ')
+		xawker(imag.imag_dict)
 
-	for file in os.listdir():
-		im.imag_xyz_gen(file, chrg_spin, ext, route.rd)
+		im = ImagInput()
+		
+		chrg_spin=input('Please enter the molecules new charge and spin value [ex.: 0 1 ]: ')
+		ext=input('Please enter the generated files extension [ex: com]: ')
+
+		for file in os.listdir():
+			im.imag_xyz_gen(file, chrg_spin, ext, route.rd)
+	else:
+		pass
 	##################################################################################################
 
 	################################### Cleaning up the mess #########################################

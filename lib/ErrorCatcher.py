@@ -17,10 +17,10 @@ import os
 
 class ErrorCatcher:
 
-	def __init__(self, error_counter=0):
+	def __init__(self):
 
 		print('Checking for errors!')
-		self.error_counter = error_counter
+		self.error_counter = 0
 
 	def e_catch(self, file):
 		"""

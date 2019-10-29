@@ -11,12 +11,9 @@ of the License, or (at your option) any later version.
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY.
 """
-import re, os
+import os
 
 class VersionControl:
-	
-	def __init__(self):
-		os.chdir(os.path.expanduser("~/gausspy/lib/"))
 	
 	@staticmethod
 	def version():
@@ -31,14 +28,28 @@ class VersionControl:
 
 			line = rf.readline()
 
-			for nr in re.finditer("[0-9.]{1,3}", line):
-				
-				ver = float(nr.group(0))
+			ver_nr = line.split("=")
+			
+		return ver_nr[1]
 
-		return ver
+	@staticmethod
+	def version_updater():
+
+		"""
+		Updates the gausspy softwares` version number.
+		"""
+
+		new_version = input("Enter the new version of gausspy: ")
+
+		with open("__init__.py", 'w') as  wf:
+			wf.write("__version__ = " + str(new_version))
+
+		print("The softwares` version has been updated to version number:",VersionControl.version())
+
 
 if __name__ == '__main__':
-	
 
-	v = Version()
+
+	v = VersionControl()
 	v.version()
+	v.version_updater()

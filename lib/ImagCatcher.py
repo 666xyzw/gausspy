@@ -18,13 +18,17 @@ import os, re
 
 class ImagCatcher:
 
-	def __init__(self, imag_dict={}, imag_counter=0):
+	"""
+	The ImagCatcher class searches through the given file for imaginary frequency(ies).
+	"""
+
+	def __init__(self):
 		"""
 		Initializes the imag_dict dictionary and imag_counter variable
 		"""
 		print("Checking for imaginary frequency(ies)!")
-		self.imag_dict = imag_dict #stores the imaginary freqs in file_name:imaginary number format
-		self.imag_counter = imag_counter #counts how manny calculations have imaginary freqs
+		self.imag_dict = {} #stores the imaginary freqs in file_name:imaginary number format
+		self.imag_counter = 0 #counts how manny calculations have imaginary freqs
 
 
 	def imag_catcher(self, file):
@@ -56,14 +60,14 @@ class ImagCatcher:
 							old_file=file
 							new_file=f_name +"_imag" + self.imag_dict[f_name] +'.' + f_ext
 							os.system('mv ' + old_file + ' ' + new_file) #renames the original log file by adding the "_imag@" to its name; this will be usefull to another script
-
+							
 		except (ValueError, OSError):
 			pass
 
 		return self.imag_counter #it is returned because it needs to be evaluated in the main script
 		#if it`s 0 then the script skips the part with the imaginary freq(s)!
-		return imag_dict
-		print('You have a total of {} calculation(s) with Imaginary Frequency(ies)!'.format(imag_counter))
+		return self.imag_dict
+		print('You have a total of {} calculation(s) with Imaginary Frequency(ies)!'.format(self.imag_counter))
 
 
 if __name__ == '__main__':

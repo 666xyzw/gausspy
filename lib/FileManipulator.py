@@ -11,7 +11,8 @@ of the License, or (at your option) any later version.
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY.
 """
-
+import os
+from AtomList import AtomList as AL
 
 
 class FileManipulator:
@@ -64,6 +65,8 @@ class FileManipulator:
 		self.atom_list.append('0\n') #in the end of the list there must be a 0\n otherwise the Gaussian program
 								#will throw in an error!
 
+		return self.atom_list
+
 		
 	
 	def write1(self, functional, fbasis, route, chrg_spin, ext):
@@ -88,11 +91,17 @@ class FileManipulator:
 		except ValueError:
 			pass
 
-	def write2(self, atom_list, functional, fbasis, sbasis, hv, route, chrg_spin, ext):
+	def write2(self, atom_list, functional, fbasis, sbasis, route, chrg_spin, ext):
 		"""
 		This method is called when a second basis set is supplied by the user.
 		"""
-		
+		atoms = AL()
+		atoms.atompop(atom_list)
+		hv = atoms.hv_atom
+
+		# print("new_list_of_atoms: ",atom_list)
+		# print("heavy atom: ",hv)
+
 		try:
 
 			with open(self.f_name+ '.' + ext, 'w') as wf:
@@ -120,15 +129,14 @@ class FileManipulator:
 					wf.write('\n')	
 
 
-		except ValueError:
+		except (ValueError, TypeError):
+			print("There is no second row transition metal in this file!")
 			pass
 
 
 
 if __name__ == '__main__':
 	
-	import os
-
 	path = input("Enter path: ")
 
 	os.chdir(os.path.expanduser(path))
@@ -136,12 +144,11 @@ if __name__ == '__main__':
 	functional = input("Enter the functional: ")
 	fbasis = input("Enter the first basis set: ")
 	sbas= input("Second basis: ")
-	hv = input("Heavy atoms: ")
 	route = input('Enter the rest of the route section: ')
 	chrg_spin=input('Enter the molecules new charge and spin value: ')
 	ext=input('Enter the generated files extension: ')
 
-	atom_list=['C', 'B', 'H', '0\n'] #this is a dummy list
+	atom_list=['C', 'B', 'H', 'Rh' '0\n'] #this is a dummy list
 
 	for file in os.listdir():
 	
@@ -150,4 +157,4 @@ if __name__ == '__main__':
 		if sbas == '':
 			f.write1(functional, fbasis, route, chrg_spin, ext)
 		elif sbas != '':
-			f.write2(atom_list, functional, fbasis, sbas, hv, route, chrg_spin, ext)
+			f.write2(atom_list, functional, fbasis, sbas, route, chrg_spin, ext)

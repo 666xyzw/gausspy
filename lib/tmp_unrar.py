@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 #Written by xyz666
 
 """
@@ -12,8 +13,6 @@ but WITHOUT ANY WARRANTY.
 
 
 import os
-
-import threading
 
 def tmp_check(directory):
 	"""
