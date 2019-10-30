@@ -37,7 +37,7 @@ On GNU/Linux system(s)#
 
 5. Type in gausspy (it will display some messages...don`t worry about them...)
 
-6. A Menu with 3 choices will appear:
+6. A Menu with 5 choices will appear:
 	1. Input file manipualtion 
 		-> This gets you to the part where you can generate inputfile from xyz/spinpu/gjf files created with Jmol, 
 		Spartan, GaussView, Hyperchem...etc.
@@ -59,12 +59,9 @@ On GNU/Linux system(s)#
             * Now this part is optional as the fifth request! You ONLY have to enter
             a second basis set if the molecule contains second row transition metal(s)!
 
-       		-> [OPTIONAL] Fifth request is to specifiy the second row transition metal so itt will be added
-        into the input file, ex.: Rh
+       	-> Sixth request is to specify the molecules charge and multiplicity, ex.: 0 1
 
-       		-> Sixth request is to specify the molecules charge and multiplicity, ex.: 0 1
-
-       		-> Seventh request is to give the new file(s) extension, ex.: com
+       	-> Seventh request is to give the new file(s) extension, ex.: com
 		
 		
 	2. Data analysis
@@ -72,10 +69,17 @@ On GNU/Linux system(s)#
 		-> Here you have to enter the path to the folder where you have the tar/tgz files.
 		-> ex.: ~/Programing/python/test/;
 		-> When you get promted to enter the route section, charge and spin, extension then basically you 
-		must do the same thing as above at the input file generation section :) . Theese request pop up only
+		must do the same thing as above at the input file generation section :) . These request pop up only
 		when the program has found imaginary frequency(ies) and needs to generate a new set of coordinates.
 
-	3. Exit
+	3. README
+		-> opens the README file and ask the user if it wants to do anything else; if the answer is yes then it goes bakc in to the menu
+		if no then exits the program.
+
+	4. LICENSE
+		-> same operations as in the REAMDE file, but here the LICENSE file is displayed.
+
+	5. Exit
 		-> Terminates the software.
 		
 #########################
