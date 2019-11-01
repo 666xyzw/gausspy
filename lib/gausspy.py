@@ -108,7 +108,7 @@ def mainfunc():
 		os.chdir(path.lr_path)
 		
 		if pr == '3':
-			with open("README", 'r') as rf:
+			with open("README.md", 'r') as rf:
 				file = rf.read()
 
 			print(file)
