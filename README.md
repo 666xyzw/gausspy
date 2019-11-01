@@ -1,6 +1,6 @@
 # gausspy
 
-**written by xyz666 **
+**written by xyz666**
 
 This program can generate gaussian input files from spinput, xyz, and gjf files,
 and can analyze the tar/tgz files from the calculations, by searching for error termination, 
@@ -16,8 +16,7 @@ How to use the program?
 
 Well...:
 
-
-## On GNU/Linux system(s)#
+## On GNU/Linux system(s)
 
 1. Open a terminal (usually Ctrl + Alt + T)
 
@@ -38,7 +37,7 @@ Well...:
 
 6. A Menu with 5 choices will appear
 
-	**1. Input file manipualtion **
+	**1. Input file manipualtion**
 	
 	This gets you to the part where you can generate inputfile from xyz/spinput/gjf files created with Jmol, Spartan, GaussView...etc.
 		
