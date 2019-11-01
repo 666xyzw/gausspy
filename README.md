@@ -22,7 +22,7 @@ Well...:
 
 2. Download gausspy either as a zip file and then unpack it, or enter in the terminal the following: git clone git_address (this can be copied from abode the download button ;)
 
-3. Go in to the gausspy folder and make the setup.py executable: chmod +x setup.py
+3. Go in to the gausspy folder and list the folders content with "ls -lh". If setup.sh is executable then jump to step 4.; otherwise make the setup.sh executable by: chmod +x setup.sh
 
 4. Run setup.sh (ex.: ./setup.sh)
 
