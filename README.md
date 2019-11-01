@@ -80,19 +80,19 @@ The program is not fully compatible with Windows OS. BUT if you have Windows 10 
 
 For those who want to contribute to this little and humble project :)
     
- first of all: feel free to modify/add to the project :)
+- first of all: feel free to modify/add to the project :)
 
- every file that does something (functions, classes) goes into lib/ folder
+- every file that does something (functions, classes) goes into lib/ folder
 
- file names that contain only functions are written in lowerCamelCase style, and are named after the main function, ex.: xawker.py
+- file names that contain only functions are written in lowerCamelCase style, and are named after the main function, ex.: xawker.py
 
- file names that contain classes are written in UpperCamelCase (like the class it self) style, ex.: ImagCatcher.py
+- file names that contain classes are written in UpperCamelCase (like the class it self) style, ex.: ImagCatcher.py
 
- if you write something in another language that is compiled and not interpreted (C, C++, Java...etc.) then the source
+- if you write something in another language that is compiled and not interpreted (C, C++, Java...etc.) then the source
  code goes in to the src/ folder. This is because of the GPL-2.0 license.
 
- the tests/ folder holds some files that can be analyzed and some files to generate input files; both type of files are held in different folders, namely tests/analysis/ and tests/input/.
+- the tests/ folder holds some files that can be analyzed and some files to generate input files; both type of files are held in different folders, namely tests/analysis/ and tests/input/.
 
- the tests/input/ folder also holds 2 sets of files:
+- the tests/input/ folder also holds 2 sets of files:
 > 1. inputs_with_first_row_transitional_metals/ -> stores files that don`t contain second row transition metals
 > 2. inputs_with_second_row_transitional_metals/ -> stores files that contain second row transition metals
