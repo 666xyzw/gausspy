@@ -25,12 +25,12 @@ class PathEngine:
 
 	def __init__(self):
 
-		path_search = subprocess.run("find ~/ PathEngine.py | grep PathEngine.py", shell=True, stdout=subprocess.PIPE)
+		path_search = subprocess.run("readlink ~/bin/gausspy", shell=True, stdout=subprocess.PIPE)
 		self.path_variables = path_search.stdout.decode().split('/')
 		
 		for x in self.path_variables:
 			
-			if "PathEngine.py\n" in x:
+			if "gausspy.py\n" in x:
 				self.path_variables.remove(x)
 
 class PathConstructor(PathEngine):

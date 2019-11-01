@@ -66,15 +66,30 @@ def prompt():
 def system():
 	"""
 	ist`s called system but id does only one thing: asks the user if it
-	wants something else after one oiperation is
-	completed
-	global users
+	wants something else after one operation is completed.
 	"""
-	global users
+	global answer
+	
+	answer=input('Would you like anything else? [yes/no]: ')
+	
+	if answer == 'yes':
+		subprocess.run("clear")
+		pass #it has to be passed so the program jumps back to the beggining
+		#of the while loop!
 
-	users=input('Would you like anything else? [yes/no]: ')
 
+	elif answer == 'no':
 
+		print("Thank you for using gausspy.\n"
+			"Have a nice day!\n")
+		time.sleep(2)
+		sys.exit(0)
+	
+	else:
+		print("Please give a 'yes' or 'no' answer!")
+		system()
+
+	
 def mainfunc():
 	"""
 	Main function of the program.
@@ -95,6 +110,7 @@ def mainfunc():
 		if pr == '3':
 			with open("README", 'r') as rf:
 				file = rf.read()
+
 			print(file)
 			os.chdir(path.gauss_py()) 
 
@@ -122,21 +138,14 @@ if __name__=='__main__':
 	try:
 
 		initialising()
-		menu()
+		
 		
 		while True:
+
+			menu()
 			mainfunc()
 			system()
-
-			if users=='yes':
-				subprocess.run("clear")
-				menu()
-
-			else:
-				print("Thank you for using gausspy.\n"
-					"Have a nice day!\n")
-				time.sleep(2)
-				sys.exit(0)
-
+			
+		
 	except KeyboardInterrupt:
 		print("\nWhatever floats your boat man!\n")

@@ -34,7 +34,7 @@ def data_analysis():
 	from RouteCard import RouteCard as RC
 	from EnergyEx import EnergyEx  
 	from csvwriter import csvwriter
-	from fileseparator import fileseparator
+	from FileSeparator import FileSeparator
 	from xawker import xawker
 	from ImagInput import ImagInput
 	from cleaner import cleaner	
@@ -78,7 +78,7 @@ def data_analysis():
 	energy=EnergyEx()
 
 	for file in os.listdir():
-		print(file)
+		# print(file)
 		energy.sampler(file)
 
 
@@ -86,8 +86,10 @@ def data_analysis():
 	##################################################################################################
 
 	####### Separating the files containig Errors from those containing imaginary frequencies ########
+	fs = FileSeparator(imag.imag_dict)
+
 	for file in os.listdir():
-		fileseparator(file)
+		fs.file_separator(file)
 	##################################################################################################
 
 	####### Genertaing the new input files from the *.log files containing imaginary freqs #######
