@@ -55,7 +55,7 @@ Well...:
 
 	- Fifth request is to specify the molecules charge and multiplicity, ex.: 0 1
 
-       - Sixth request is to give the new file(s) extension, ex.: com
+	- Sixth request is to give the new file(s) extension, ex.: com
 		
 	**2. Data analysis** 
 	In this part you have to give the /path/to/the/tgz files; ex.: ~/Programing/python/test/
