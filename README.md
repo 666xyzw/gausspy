@@ -42,16 +42,16 @@ Well...:
 	This gets you to the part where you can generate inputfile from xyz/spinput/gjf files created with Jmol, Spartan, GaussView...etc.
 		
 	- The first thing you have to give to the program is the path to the directory where the xyz/spinput/gjf files are located; ex.: /path/to/Programing/python/test/	
-	>The source files extension is handled automatically by gausspy.
+	>>>The source files extension is handled automatically by gausspy.
 		
 	- Second request is to enter the functional that will be used in the  calculations, ex.: B3LYP
-	>In a gaussian input file the first line is the route section where you can specify the functionals/basis sets, optimization, frequency calculation...and so on...
+	>>>In a gaussian input file the first line is the route section where you can specify the functionals/basis sets, optimization, frequency calculation...and so on...
 		
 	- Third request is to give the first basis set for the calculation, ex.: 6-31G(d)
-	>I named it first basis set because the program takes two basis sets. This will be used in every calculation!
+	>>>I named it first basis set because the program takes two basis sets. This will be used in every calculation!
 
 	- (OPTIONAL) Fourth request is to give the second basis set, ex.: SDD
-	>Now this part is optional as the fifth request! You ONLY have to enter a second basis set if the molecule contains second row transition metal(s)!
+	>>>Now this part is optional as the fifth request! You ONLY have to enter a second basis set if the molecule contains second row transition metal(s)!
 
 	- Fifth request is to specify the molecules charge and multiplicity, ex.: 0 1
 
