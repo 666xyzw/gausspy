@@ -56,11 +56,7 @@ class ImagCatcher:
 								
 
 							print('The {} file contains {} Imaginary Frequency(ies)!'.format(file, self.imag_dict[f_name])) #prints out the number of imaginary frequencies in the file found with regex
-							
-							old_file=file
-							new_file=f_name +"_imag" + self.imag_dict[f_name] +'.' + f_ext
-							os.system('mv ' + old_file + ' ' + new_file) #renames the original log file by adding the "_imag@" to its name; this will be usefull to another script
-							
+														
 		except (ValueError, OSError):
 			pass
 
