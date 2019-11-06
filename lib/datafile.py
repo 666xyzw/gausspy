@@ -104,15 +104,15 @@ def data_analysis():
 
 		for file in os.listdir():
 			im.imag_xyz_gen(file, chrg_spin, ext, route.rd)
+
+		################### Cleaning up the mess ###################	
+		answer = input("Do you need the old xyz/xyz-/ginp file(s)? ")
+
+		cleaner(answer)
+		#############################################################
+
 	else:
 		pass
-	##################################################################################################
-
-	################################### Cleaning up the mess #########################################
-
-	answer = input("Do you need the old xyz/xyz-/ginp file(s)? ")
-
-	cleaner(answer)
 	##################################################################################################
 
 	################################### Exiting the data analysis mode ###############################
