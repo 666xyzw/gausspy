@@ -47,8 +47,13 @@ class EnergyEx:
 					for SCF in lines:
 						if 'SCF Done:  E'in SCF:
 							self.test_list.append(SCF)
-				
-					self.scf_list.append(self.test_list[-1])
+					
+					try:
+						self.scf_list.append(self.test_list[-1])
+
+					except IndexError:
+						print("No energies found in {}".format(file))
+						pass
 
 					for y in self.scf_list:
 						energy=y.split(' ')
