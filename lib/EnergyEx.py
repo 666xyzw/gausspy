@@ -37,27 +37,43 @@ class EnergyEx:
 
 		try:
 
-			name, ext = file.split('.')
+			name, ext = file.split('.') #split into file name and file extension
 
-			if ext == "log":
+			
 
-				with open(file, 'r+') as rf:
-					lines=rf.readlines()
+			if ext == "log": #if extension is log then
+
+				with open(file, 'r+') as rf: 	#open it as rf
+					lines=rf.readlines() 		#reads the whole file
 							
-					for SCF in lines:
-						if 'SCF Done:  E'in SCF:
-							self.test_list.append(SCF)
+					for SCF in lines: 			#parses the lines
+						if 'SCF Done:  E'in SCF:	#if finds the words SCF Done:  E then that line 
+							self.test_list.append(SCF) #is added to the self.test_list
 					
 					try:
-						self.scf_list.append(self.test_list[-1])
+						self.scf_list.append(self.test_list[-1]) #takes out only the last line
 
 					except IndexError:
-						print("No energies found in {}".format(file))
+						print("No energies found in {}".format(file)) #if nothing was found then it write the message
 						pass
 
-					for y in self.scf_list:
-						energy=y.split(' ')
-						self.energy_dict[name]=energy[7]
+					for y in self.scf_list: #pasrses the new list
+						energy=y.split(' ') #splits the lines by spaces
+
+						for element in energy: #parses every element in the list
+							n = 0 # just a numerator variable
+
+							try:
+								
+								self.energy_dict[name] = float(element) #tries to convert the element to a float
+								n += 1 # numbers the successfull conversions
+
+								if n == 1: # if it is the first conversion (that is the Energy of the system)
+									break  #then breaks the loop
+
+							except ValueError:
+							 	#testing if the element can be converted to a float if not the it is a string
+							 	pass
 
 
 			if ext == "log" and "_ERROR" in name:
